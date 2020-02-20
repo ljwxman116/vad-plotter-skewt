@@ -523,7 +523,7 @@ def plot_hodograph(data, parameters, fname=None, web=False, fixed=False, archive
     lonr=float(radll[data.rid][1]) #we
     
     fp='' #file path directory for data download
-    f='' #file pat directory for 'get_inv.pl' and 'get_grib.pl'
+    f='' #file path directory for 'get_inv.pl' and 'get_grib.pl'. More info here: https://nomads.ncep.noaa.gov/txt_descriptions/fast_downloading_grib.shtml
     ic=subprocess.Popen(f'{f}./get_inv.pl {url}.idx | egrep "(:RH:|:TMP:|:PRES:surface:|:CAPE:surface:)" | {f}./get_grib.pl {url} {fp}rap.grib2',shell=True)
     ic.wait()
     of=subprocess.Popen(f'/usr/local/bin/wgrib2 {fp}rap.grib2 -s -lon {lonr} {latr} > {fp}rap.txt', shell=True)
