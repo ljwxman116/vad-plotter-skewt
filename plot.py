@@ -623,7 +623,7 @@ def plot_hodograph(data, parameters, fname=None, web=False, fixed=False, archive
         prof=mpcalc.parcel_profile(list(reversed(tpn))*units.hPa,tn[-1]*units.degC,tdn[-1]*units.degC).to('degC')
         ax.plot(prof,list(reversed(tpn)),color='orange',linewidth=0.7)
     
-    ax.axvline(0, color='C0',linewidth=.7)
+    ax.axvline(0, color='C0',linewidth=.7) 
 
     ax.yaxis.set_major_formatter(ScalarFormatter())
     ax.yaxis.set_minor_formatter(NullFormatter())
